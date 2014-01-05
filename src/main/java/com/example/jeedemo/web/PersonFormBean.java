@@ -43,10 +43,6 @@ public class PersonFormBean implements Serializable {
 		return persons;
 	}
 
-	public ListDataModel<Car> getOwnedCars() {
-		ownedCars.setWrappedData(pm.getOwnedCars(personToShow));
-		return ownedCars;
-	}
 	
 	// Actions
 	public String addPerson() {
@@ -64,6 +60,10 @@ public class PersonFormBean implements Serializable {
 	public String showDetails() {
 		personToShow = persons.getRowData();
 		return "details";
+	}
+	public ListDataModel<Car> getOwnedCars() {
+		ownedCars.setWrappedData(pm.getOwnedCars(personToShow));
+		return ownedCars;
 	}
 	
 	public String disposeCar(){

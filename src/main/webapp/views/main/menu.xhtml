@@ -14,10 +14,26 @@
 		<li>
 		  <h:commandLink action="addSweter?faces-redirect=true">
 			<h:outputText value="#{msg.sweterAddLabel}" />
-		  </h:commandLink></li>
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="addOwner?faces-redirect=true">
+			<h:outputText value="Dodaj osobe" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="addSwetertoOwner?faces-redirect=true">
+			<h:outputText value="Przypisz osobe" />
+		  </h:commandLink>
+		</li>
 		<li>
 		  <h:commandLink action="showSweter?faces-redirect=true">
 			 <h:outputText value="#{msg.sweterAllLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="showOsoba?faces-redirect=true">
+			 <h:outputText value="Pokaz osoby" />
 		  </h:commandLink>
 		</li>
 	</ul>

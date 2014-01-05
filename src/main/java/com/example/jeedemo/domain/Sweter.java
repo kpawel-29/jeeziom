@@ -1,11 +1,17 @@
 package com.example.jeedemo.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({ 
@@ -17,6 +23,13 @@ public class Sweter {
 	private String name = "unknown";
 	private int size = 0;
 	private String color = "blue";
+	
+	//private Addon addon;
+	
+	private List<Osoba> owner;
+	/*private String[] osobaList = {
+             "Marek", "Janek", "Bolek", "Marysia"                        
+	};*/
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,5 +57,17 @@ public class Sweter {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	public List<Osoba> getOwner() {
+		return owner;
+	}
+	public void setOwner(List<Osoba> owner) {
+		this.owner = owner;
+	}
+	
+	
+	
 
+	
 }

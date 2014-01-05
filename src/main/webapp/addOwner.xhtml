@@ -8,25 +8,16 @@
 	xmlns:rich="http://richfaces.org/rich">
 
 	<ui:define name="content">
-		<h:form id="sweterForm">
+		<h:form id="osobaForm">
 			<h:panelGrid columns="2">
 
-				<h:outputText value="#{msg.sweterName}" />
-				<h:inputText id="name" value="#{sweterBean.sweter.name}"
+				<h:outputText value="Name" />
+				<h:inputText id="name" value="#{osobaBean.osoba.firstName}"
 					required="#{true}" />
-
-				<h:outputText value="#{msg.sweterSize}" />
-				<h:inputText id="size" value="#{sweterBean.sweter.size}" />
-
-				<h:outputText value="#{msg.sweterColor}" />
-				<h:inputText id="color" value="#{sweterBean.sweter.color}" />
-				
-	
-
 			</h:panelGrid>
 
 			<h:commandButton value="#{msg.personFormOKButton}"
-				action="#{sweterBean.addSweter}" />
+				action="#{osobaBean.addOsoba}" />
 
 			<h:panelGrid>
 				<h:messages for="" />
